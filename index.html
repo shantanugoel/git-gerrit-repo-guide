@@ -2,38 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>A Quick Guide To Git and MLG Code Contribution</title>
+<title>A Quick Guide To Git, Gerrit, Repo</title>
 <meta name="author" content="(- Shantanu Goel)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
 
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
 
 <link rel="stylesheet" href="css/custom.css"/>
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
     if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
-<meta name="description" content="A Quick Guide to Git and MLG Code Contribution">
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">A Quick Guide To Git and MLG Code Contribution</h1><h2 class="author">- Shantanu Goel</h2>
+<section id="sec-title-slide"><h1 class="title">A Quick Guide To Git, Gerrit, Repo</h1><h2 class="author">- Shantanu Goel</h2>
 </section>
 
 <section>
-<section id="slide-org3c54756">
-<h2 id="org3c54756">The "Repository"</h2>
+<section id="slide-org9edd7a6">
+<h2 id="org9edd7a6">The "Repository"</h2>
 <p>
 Contains all data and metadata for the git version control system
 </p>
@@ -62,8 +61,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-org5b67c86">
-<h2 id="org5b67c86">The Three States</h2>
+<section id="slide-org5d9e066">
+<h2 id="org5d9e066">The Three States</h2>
 
 <div class="figure">
 <p><img src="./images/git-working-directory-index-head.png" alt="git-working-directory-index-head.png" />
@@ -79,8 +78,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-org83b60d4">
-<h2 id="org83b60d4">Configuration</h2>
+<section id="slide-org39f7a70">
+<h2 id="org39f7a70">Configuration</h2>
 <ul>
 <li>Lots of Configuration options but don't get overwhelmed</li>
 <li>Just need to setup username and email to be able to commit</li>
@@ -90,7 +89,7 @@ Contains all data and metadata for the git version control system
 <div class="org-src-container">
 
 <pre><code class="bash" >git config --global user.name "Shantanu Goel"
-git config --global user.email "goels@qti.qualcomm.com"
+git config --global user.email "shantanu@shantanugoel.com"
 </code></pre>
 </div>
 
@@ -102,8 +101,8 @@ git config --global user.email "goels@qti.qualcomm.com"
 </section>
 </section>
 <section>
-<section id="slide-org1f438aa">
-<h2 id="org1f438aa">Basic workflow</h2>
+<section id="slide-org237631c">
+<h2 id="org237631c">Basic workflow</h2>
 <ul>
 <li>Make changes</li>
 
@@ -162,8 +161,8 @@ git diff --cache
 </section>
 </section>
 <section>
-<section id="slide-orga073dde">
-<h2 id="orga073dde">Basic workflow continued..</h2>
+<section id="slide-orga412e2c">
+<h2 id="orga412e2c">Basic workflow continued..</h2>
 <ul>
 <li>Commit the changes (Update the HEAD)</li>
 
@@ -220,8 +219,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-org85a0dad">
-<h2 id="org85a0dad">Branching and Merging</h2>
+<section id="slide-orgc8da128">
+<h2 id="orgc8da128">Branching and Merging</h2>
 <ul>
 <li>Switch to an existing branch</li>
 
@@ -247,8 +246,8 @@ git push origin master
 </section>
 </div>
 </div>
-<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
-<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -275,7 +274,7 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
 });
 </script>
 </body>

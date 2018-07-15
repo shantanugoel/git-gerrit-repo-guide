@@ -6,6 +6,7 @@
 #+OPTIONS: reveal_center:f 
 #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
 #+REVEAL_TRANS: fade
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_PLUGINS: (highlight)
 #+REVEAL_EXTRA_CSS: css/custom.css
 
