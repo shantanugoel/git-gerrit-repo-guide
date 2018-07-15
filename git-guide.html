@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>A Quick Guide To Git and MLG Code Contribution</title>
+<meta name="author" content="(- Shantanu Goel)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="css/custom.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="A Quick Guide to Git and MLG Code Contribution">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">A Quick Guide To Git and MLG Code Contribution</h1><h2 class="author">- Shantanu Goel</h2>
+</section>
+
+<section>
+<section id="slide-org3c54756">
+<h2 id="org3c54756">The "Repository"</h2>
+<p>
+Contains all data and metadata for the git version control system
+</p>
+
+<ul>
+<li>Create new repository</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >git init
+</code></pre>
+</div>
+<ul>
+<li>"Get" an existing repository</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >git clone [path-to-repository]
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org5b67c86">
+<h2 id="org5b67c86">The Three States</h2>
+
+<div class="figure">
+<p><img src="./images/git-working-directory-index-head.png" alt="git-working-directory-index-head.png" />
+</p>
+</div>
+
+<small>Image &copy; https://git-scm.com/book/</small>
+
+<p>
+<code>*</code> Staging area is also known as the "index"
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org83b60d4">
+<h2 id="org83b60d4">Configuration</h2>
+<ul>
+<li>Lots of Configuration options but don't get overwhelmed</li>
+<li>Just need to setup username and email to be able to commit</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git config --global user.name "Shantanu Goel"
+git config --global user.email "goels@qti.qualcomm.com"
+</code></pre>
+</div>
+
+<ul>
+<li>Look into setting up ssh keys for working easily with remote repositories</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1f438aa">
+<h2 id="org1f438aa">Basic workflow</h2>
+<ul>
+<li>Make changes</li>
+
+<li>Check if any changes have been made</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git status -s
+</code></pre>
+</div>
+<ul>
+<li>Diff the changes to confirm that they are correct</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git diff
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git diff [filename]
+</code></pre>
+</div>
+
+<ul>
+<li>Stage the changes (add them to the index)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git add [filename]
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Stage all files under current path
+git add .
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># See diff of staged files
+git diff --cache
+</code></pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga073dde">
+<h2 id="orga073dde">Basic workflow continued..</h2>
+<ul>
+<li>Commit the changes (Update the HEAD)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git commit
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Add all tracked files without needing a git add step and
+# specify a short commit message with the command itself
+git commit -am
+</code></pre>
+</div>
+
+<ul>
+<li>Check log</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git log
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git log --oneline --graph
+</code></pre>
+</div>
+
+<ul>
+<li>Push changes to remote repository</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git push [repository] [branch]
+git push origin master 
+</code></pre>
+</div>
+
+<ul>
+<li>Explore various other switches/options of these commands</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org85a0dad">
+<h2 id="org85a0dad">Branching and Merging</h2>
+<ul>
+<li>Switch to an existing branch</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout branch-name
+</code></pre>
+</div>
+
+<ul>
+<li>Create new branch</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout -b branch-name
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

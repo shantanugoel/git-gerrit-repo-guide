@@ -1,0 +1,129 @@
+#+Title: A Quick Guide To Git, Gerrit, Repo
+#+Author: - Shantanu Goel
+#+DATE:
+
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: reveal_center:f 
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
+#+REVEAL_TRANS: fade
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTRA_CSS: css/custom.css
+
+* The "Repository"
+Contains all data and metadata for the git version control system
+
+#+ATTR_REVEAL: :frag roll-in
+
+- Create new repository
+
+#+BEGIN_SRC shell
+git init
+#+END_SRC
+- "Get" an existing repository
+  
+#+BEGIN_SRC shell
+  git clone [path-to-repository]
+#+END_SRC
+
+* The Three States
+
+[[./images/git-working-directory-index-head.png]]
+
+#+REVEAL_HTML: <small>Image &copy; https://git-scm.com/book/</small>
+
+=*= Staging area is also known as the "index"
+
+* Configuration
+
+- Lots of Configuration options but don't get overwhelmed
+- Just need to setup username and email to be able to commit
+
+#+BEGIN_SRC bash
+git config --global user.name "Shantanu Goel"
+git config --global user.email "shantanu@shantanugoel.com"
+#+END_SRC
+
+- Look into setting up ssh keys for working easily with remote repositories
+
+* Basic workflow
+
+- Make changes
+
+- Check if any changes have been made
+  
+#+BEGIN_SRC bash
+git status -s
+#+END_SRC
+- Diff the changes to confirm that they are correct
+
+#+BEGIN_SRC bash
+git diff
+#+END_SRC
+
+#+BEGIN_SRC bash
+git diff [filename]
+#+END_SRC
+
+- Stage the changes (add them to the index)
+
+#+BEGIN_SRC bash
+git add [filename]
+#+END_SRC
+
+#+BEGIN_SRC bash
+# Stage all files under current path
+git add .
+#+END_SRC
+
+#+BEGIN_SRC bash
+# See diff of staged files
+git diff --cache
+#+END_SRC
+
+
+* Basic workflow continued..
+  
+- Commit the changes (Update the HEAD)
+
+#+BEGIN_SRC bash
+git commit
+#+END_SRC
+
+#+BEGIN_SRC bash
+# Add all tracked files without needing a git add step and
+# specify a short commit message with the command itself
+git commit -am
+#+END_SRC
+
+- Check log
+
+#+BEGIN_SRC bash
+git log
+#+END_SRC
+
+#+BEGIN_SRC bash
+git log --oneline --graph
+#+END_SRC
+
+- Push changes to remote repository
+
+#+BEGIN_SRC bash
+git push [repository] [branch]
+git push origin master 
+#+END_SRC
+
+- Explore various other switches/options of these commands
+
+* Branching and Merging
+
+- Switch to an existing branch
+
+#+BEGIN_SRC bash 
+git checkout branch-name
+#+END_SRC
+
+- Create new branch
+  
+#+BEGIN_SRC bash 
+git checkout -b branch-name
+#+END_SRC
