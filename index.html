@@ -31,8 +31,8 @@
 </section>
 
 <section>
-<section id="slide-org6bc2870">
-<h2 id="org6bc2870">The "Repository"</h2>
+<section id="slide-org7fb1572">
+<h2 id="org7fb1572">The "Repository"</h2>
 <p>
 Contains all data and metadata for the git version control system
 </p>
@@ -61,8 +61,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-orge551680">
-<h2 id="orge551680">The Three States</h2>
+<section id="slide-org32cd2eb">
+<h2 id="org32cd2eb">The Three States</h2>
 
 <div class="figure">
 <p><img src="./images/git-working-directory-index-head.png" alt="git-working-directory-index-head.png" />
@@ -78,8 +78,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-org37c702c">
-<h2 id="org37c702c">Configuration</h2>
+<section id="slide-org8863ff2">
+<h2 id="org8863ff2">Configuration</h2>
 <ul>
 <li>Lots of Configuration options but don't get overwhelmed</li>
 <li>Just need to setup username and email to be able to commit</li>
@@ -101,8 +101,8 @@ git config --global user.email "shantanu@shantanugoel.com"
 </section>
 </section>
 <section>
-<section id="slide-orgcb6f0c4">
-<h2 id="orgcb6f0c4">Basic workflow</h2>
+<section id="slide-org0cc7d1a">
+<h2 id="org0cc7d1a">Basic workflow</h2>
 <ul>
 <li>Make changes</li>
 
@@ -161,8 +161,8 @@ git diff --cache
 </section>
 </section>
 <section>
-<section id="slide-orgfd7b4dd">
-<h2 id="orgfd7b4dd">Basic workflow continued..</h2>
+<section id="slide-org20bc1ac">
+<h2 id="org20bc1ac">Basic workflow continued..</h2>
 <ul>
 <li>Commit the changes (Update the HEAD)</li>
 
@@ -219,8 +219,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orgc6093db">
-<h2 id="orgc6093db">Branching and Merging</h2>
+<section id="slide-orge6fa3e2">
+<h2 id="orge6fa3e2">Branching and Merging</h2>
 
 <div class="figure">
 <p><img src="./images/branches.png" alt="branches.png" />
@@ -231,8 +231,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orge398f84">
-<h2 id="orge398f84">Branching and Merging</h2>
+<section id="slide-orge20e0d4">
+<h2 id="orge20e0d4">Branching and Merging</h2>
 <ul>
 <li>Always work on branches while making any non-trivial changes, so that you can develop in isolation.</li>
 <li>Merge back to master when done</li>
@@ -270,8 +270,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orgf389e83">
-<h2 id="orgf389e83">Branching and Merging</h2>
+<section id="slide-orgb94636b">
+<h2 id="orgb94636b">Branching and Merging</h2>
 <ul>
 <li>Merging is the act of combining the commits made in different branches into a unified history</li>
 <li>Receiving branch: The branch that will have another branch's changes merged into itself</li>
@@ -298,8 +298,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orgb716457">
-<h2 id="orgb716457">Rebasing</h2>
+<section id="slide-orgc98b36c">
+<h2 id="orgc98b36c">Rebasing</h2>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/rebase.svg" class="org-svg">
@@ -310,8 +310,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-orgee32e5f">
-<h2 id="orgee32e5f">Rebasing</h2>
+<section id="slide-org97ddc24">
+<h2 id="org97ddc24">Rebasing</h2>
 <ul>
 <li>Similar to merge, but rewrites the history</li>
 <li>Bring in all changes that happened in source branch while you were making changes in your branch.</li>
@@ -343,8 +343,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-org82b1399">
-<h2 id="org82b1399">Conflicts</h2>
+<section id="slide-org687cf51">
+<h2 id="org687cf51">Conflicts</h2>
 <ul>
 <li>You may come across conflicts during merging or rebasing</li>
 
@@ -380,8 +380,8 @@ git rebase --skip
 </section>
 </section>
 <section>
-<section id="slide-org80ae8b0">
-<h2 id="org80ae8b0">Cherry-Picking</h2>
+<section id="slide-org221d960">
+<h2 id="org221d960">Cherry-Picking</h2>
 <ul>
 <li>You may want to pick a specific fix from another branch</li>
 <li>Or maybe you are jointly working on a feature with someone else maintaining their own feature branch</li>
@@ -399,18 +399,92 @@ git rebase --skip
 </section>
 </section>
 <section>
-<section id="slide-org1cbf8a3">
-<h2 id="org1cbf8a3">When things go wrong: Undo</h2>
+<section id="slide-org5b11f13">
+<h2 id="org5b11f13">When things go wrong: Undo</h2>
 <ul>
 <li>When you want to remove your changes temporarily to try something else</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Save current staged and unstaged changes into a hidden location
+# and remove them from the working directory
+git stash
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Bring back stashed changes
+git stash pop
+</code></pre>
+</div>
+
+<ul>
+<li>Can also be useful while merging/rebasing without committing</li>
+<li>Can have multiple stashes. Explore through references.</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org1cca330">
-<h2 id="org1cca330">Repo</h2>
+<section id="slide-orga53e0e2">
+<h2 id="orga53e0e2">When things go wrong: Undo</h2>
+<ul>
+<li>Temporarily go back to a previous commit in history</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout [commit-hash]
+</code></pre>
+</div>
+
+<ul>
+<li>This will put you in a "Detached head state"</li>
+<li>You can make changes here but can't commit as you are no longer on a branch</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8f9a03b">
+<h2 id="org8f9a03b">When things go wrong: Undo</h2>
+<ul>
+<li>Discard currently unstaged changes</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout -- [file-name-or-path-or.]
+</code></pre>
+</div>
+
+<ul>
+<li>Remove the changes done in a previous commit</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git revert [commit-hash]
+</code></pre>
+</div>
+
+<ul>
+<li>Creates a new commit which removes the changes introduced by the commit being reverted</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf11399e">
+<h2 id="orgf11399e">Repo</h2>
 <ul>
 <li>Tool developed by Google for large projects working with multiple git repositories</li>
 <li>Git already has submodules and subtrees but the project may want the repositories to be independently worked on</li>
@@ -422,14 +496,23 @@ git rebase --skip
 </section>
 </section>
 <section>
-<section id="slide-orgef0375a">
-<h2 id="orgef0375a">Gerrit</h2>
+<section id="slide-org5be3194">
+<h2 id="org5be3194">Gerrit</h2>
+<ul>
+<li>Provides web based code review and repository management for git</li>
+<li>Upload changes to gerrit, following any given guidelines for the project (including code as well as commit messages)</li>
+<li>Add reviewers and wait for their comments</li>
+<li>Auto checkers may be integrated by project maintainers for verifying changes</li>
+<li>-1/-2 from a checker or reviewer needs you to make changes and upload new patches</li>
+<li>+1 is good, but generally you need a +2 before the changes can be submitted/merged</li>
+
+</ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orga1f15e2">
-<h2 id="orga1f15e2">References</h2>
+<section id="slide-org89c2f92">
+<h2 id="org89c2f92">References</h2>
 <ul>
 <li>Beginner: <a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></li>
 <li>Intermediate: <a href="https://wildlyinaccurate.com/a-hackers-guide-to-git/">https://wildlyinaccurate.com/a-hackers-guide-to-git/</a></li>

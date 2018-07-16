@@ -210,6 +210,44 @@ git cherry-pick [commit-hash-to-pick]
 * When things go wrong: Undo
 - When you want to remove your changes temporarily to try something else
 
+#+BEGIN_SRC bash
+# Save current staged and unstaged changes into a hidden location
+# and remove them from the working directory
+git stash
+#+END_SRC
+
+#+BEGIN_SRC bash
+# Bring back stashed changes
+git stash pop
+#+END_SRC
+
+- Can also be useful while merging/rebasing without committing
+- Can have multiple stashes. Explore through references.
+
+* When things go wrong: Undo
+- Temporarily go back to a previous commit in history
+#+BEGIN_SRC bash
+git checkout [commit-hash]
+#+END_SRC
+
+- This will put you in a "Detached head state"
+- You can make changes here but can't commit as you are no longer on a branch
+
+* When things go wrong: Undo
+- Discard currently unstaged changes
+#+BEGIN_SRC bash
+git checkout -- [file-name-or-path-or.]
+#+END_SRC
+
+- Remove the changes done in a previous commit
+
+#+BEGIN_SRC bash
+git revert [commit-hash]
+#+END_SRC
+
+- Creates a new commit which removes the changes introduced by the commit being reverted
+
+  
 * Repo
 - Tool developed by Google for large projects working with multiple git repositories
 - Git already has submodules and subtrees but the project may want the repositories to be independently worked on
@@ -217,6 +255,12 @@ git cherry-pick [commit-hash-to-pick]
 - repo has integration with gerrit, a tool for code reviews and management
 
 * Gerrit
+- Provides web based code review and repository management for git
+- Upload changes to gerrit, following any given guidelines for the project (including code as well as commit messages)
+- Add reviewers and wait for their comments
+- Auto checkers may be integrated by project maintainers for verifying changes
+- -1/-2 from a checker or reviewer needs you to make changes and upload new patches
+- +1 is good, but generally you need a +2 before the changes can be submitted/merged
 
 * References
 - Beginner: https://www.atlassian.com/git/tutorials
