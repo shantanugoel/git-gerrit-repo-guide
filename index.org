@@ -247,7 +247,45 @@ git revert [commit-hash]
 
 - Creates a new commit which removes the changes introduced by the commit being reverted
 
+* When things go wrong: Undo
+- Swiss knife of undoing: git reset
+
+#+BEGIN_SRC bash
+# Reset the head of current branch to given reference
+# Move the index as well to this reference
+# The changes after the above reference show up as unstaged
+# No loss of staged/unstaged changes or other commits
+git reset --soft [ref]
+#+END_SRC
+#+BEGIN_SRC bash
+# Reset the head of current branch to given reference
+# The changes after the above reference show up as staged
+# No loss of staged/unstaged changes or other commits
+# --mixed is the default mode of reset if you don't specify any option
+git reset --mixed [ref]
+#+END_SRC
+#+BEGIN_SRC bash
+# Reset the head of current branch to given reference
+# All staged/unstaged changes and other commits are removed
+# Potential recovery possible (shown in further slides)
+# But make sure no unstaged changes present before running this
+git reset --hard [ref]
+#+END_SRC
   
+* When things go wrong: Undo
+
+- Git reset visualized 
+[[./images/git-reset-tree.jpg]]
+
+* When things go wrong: Undo
+- Recovering from --soft/--mixed reset is easy as there's no data loss from working directory
+
+- Recovering from --hard is possible as well if the needed changes were committed or staged
+
+- Check "git reflog" command to see the commits that you want to bring back
+
+- Check "git fsck" command to find staged changes which were not yet committed but lost due to git reset --hard
+
 * Repo
 - Tool developed by Google for large projects working with multiple git repositories
 - Git already has submodules and subtrees but the project may want the repositories to be independently worked on
@@ -284,5 +322,7 @@ repo status
 - Beginner: https://www.atlassian.com/git/tutorials
 - Quick Tips: https://wildlyinaccurate.com/a-hackers-guide-to-git/
 - Intermediate: https://git-scm.com/book/en/v2
-- All: Git man pages
+- Complete reference (if you are brave): https://git-scm.com/docs/
 - Repo: https://source.android.com/setup/develop/repo
+
+* git push --force!
