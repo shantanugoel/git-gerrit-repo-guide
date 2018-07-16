@@ -117,14 +117,110 @@ git push origin master
 
 * Branching and Merging
 
-- Switch to an existing branch
+[[./images/branches.png]]
+#+REVEAL_HTML: <small>Image &copy; https://atlassian.com/</small>
 
+* Branching and Merging
+
+- Always work on branches while making any non-trivial changes, so that you can develop in isolation.
+- Merge back to master when done
+- Any branch could be "master" branch. Names don't matter
+- List all branches  
 #+BEGIN_SRC bash 
-git checkout branch-name
+git branch
 #+END_SRC
 
-- Create new branch
+- Switch to an existing branch
+#+BEGIN_SRC bash 
+git checkout [branch-name]
+#+END_SRC
+
+- Create new branch and switch to it
   
 #+BEGIN_SRC bash 
-git checkout -b branch-name
+git checkout -b [branch-name]
 #+END_SRC
+
+* Branching and Merging
+- Merging is the act of combining the commits made in different branches into a unified history
+- Receiving branch: The branch that will have another branch's changes merged into itself
+- You should be on the receiving branch while executing the below command
+#+BEGIN_SRC bash 
+git merge [branch-to-merge]
+#+END_SRC
+
+- Deleting a branch (Either changes are merged or not needed anymore otherwise)
+
+#+BEGIN_SRC bash 
+git branch -d [branch-name]
+#+END_SRC
+  
+* Rebasing
+[[./images/rebase.svg]]
+#+REVEAL_HTML: <small>Image &copy; https://atlassian.com/</small>
+* Rebasing
+- Similar to merge, but rewrites the history
+- Bring in all changes that happened in source branch while you were making changes in your branch.
+- Apply your changes on top of this new base
+- Often required by projects before accepting your patches if they can't be cleanly merged
+#+BEGIN_SRC bash 
+git rebase
+#+END_SRC
+- Interactive rebase provides you opportunity to pick and choose the commits you need
+
+#+BEGIN_SRC bash 
+git rebase -i
+#+END_SRC
+
+- Don't rebase public/permanent branches
+  
+* Conflicts
+- You may come across conflicts during merging or rebasing
+
+#+BEGIN_SRC bash 
+  Unimpacted content
+  <<<<<<<< source-branch
+  Conflicting code from source branch
+  ========
+  Conflicting code from feature branch
+#+END_SRC
+
+- Manually fix the conflicts by editing files
+- Use normal process to add/commit the files
+- For conflicts seen during a rebase, you also have to do either one of:
+#+BEGIN_SRC bash 
+# Conflicts fixed, continue rebasing
+git rebase --continue
+# Abort rebasing
+git rebase --abort
+# Skip this commit
+git rebase --skip
+#+END_SRC
+
+* Cherry-Picking
+- You may want to pick a specific fix from another branch
+- Or maybe you are jointly working on a feature with someone else maintaining their own feature branch
+- Cherry-picking will take the specified commit and apply it to the head of your branch
+
+#+BEGIN_SRC bash
+git cherry-pick [commit-hash-to-pick]
+#+END_SRC
+
+
+* When things go wrong: Undo
+- When you want to remove your changes temporarily to try something else
+
+* Repo
+- Tool developed by Google for large projects working with multiple git repositories
+- Git already has submodules and subtrees but the project may want the repositories to be independently worked on
+- Pros and cons are debatable, largely subjective
+- repo has integration with gerrit, a tool for code reviews and management
+
+* Gerrit
+
+* References
+- Beginner: https://www.atlassian.com/git/tutorials
+- Intermediate: https://wildlyinaccurate.com/a-hackers-guide-to-git/
+- Intermediate: https://git-scm.com/book/en/v2
+- All: Git man pages
+- Repo: https://source.android.com/setup/develop/repo
