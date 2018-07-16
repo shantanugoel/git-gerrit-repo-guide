@@ -319,10 +319,12 @@ repo status
 - +1 is good, but generally you need a +2 before the changes can be submitted/merged
 
 * References
+- This guide: https://git-guide.shantanugoel.com/
+  - Pull requests for changes at: https://github.com/shantanugoel/git-gerrit-repo-guide/
 - Beginner: https://www.atlassian.com/git/tutorials
-- Quick Tips: https://wildlyinaccurate.com/a-hackers-guide-to-git/
+- Tips: https://wildlyinaccurate.com/a-hackers-guide-to-git/
 - Intermediate: https://git-scm.com/book/en/v2
-- Complete reference (if you are brave): https://git-scm.com/docs/
-- Repo: https://source.android.com/setup/develop/repo
+- For the brave: https://git-scm.com/docs/
+- Repo commands: https://source.android.com/setup/develop/repo
 
 * git push --force!
