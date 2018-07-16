@@ -253,6 +253,24 @@ git revert [commit-hash]
 - Git already has submodules and subtrees but the project may want the repositories to be independently worked on
 - Pros and cons are debatable, largely subjective
 - repo has integration with gerrit, a tool for code reviews and management
+- Not necessary to use repo commands for most things and can use git commands instead
+  
+* Repo
+- Few main commands that you'll end up using from repo:
+
+#+BEGIN_SRC bash
+# Init repo 
+repo init -u url
+
+# Sync all working directories and rebase branches 
+repo sync
+
+# Download a specific patch from gerrit
+repo download
+
+# Check status of all changes across all projects
+repo status
+#+END_SRC
 
 * Gerrit
 - Provides web based code review and repository management for git
@@ -264,7 +282,7 @@ git revert [commit-hash]
 
 * References
 - Beginner: https://www.atlassian.com/git/tutorials
-- Intermediate: https://wildlyinaccurate.com/a-hackers-guide-to-git/
+- Quick Tips: https://wildlyinaccurate.com/a-hackers-guide-to-git/
 - Intermediate: https://git-scm.com/book/en/v2
 - All: Git man pages
 - Repo: https://source.android.com/setup/develop/repo
