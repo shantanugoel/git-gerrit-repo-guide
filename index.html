@@ -27,9 +27,183 @@
 <body>
 <div class="reveal">
 <div class="slides">
+<section id="sec-title-slide"><h1 class="title">A Quick Guide To Git, Gerrit, Repo</h1><h2 class="author">- Shantanu Goel</h2>
+</section>
+
 <section>
-<section id="slide-orgff04e39">
-<h2 id="orgff04e39">Basic workflow continued..</h2>
+<section id="slide-orgbdcbb3c">
+<h2 id="orgbdcbb3c">The "Repository"</h2>
+<p>
+Contains all data and metadata for the git version control system
+</p>
+
+<ul>
+<li>Create new repository</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >git init
+</code></pre>
+</div>
+<ul>
+<li>"Get" an existing repository</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >git clone [path-to-repository]
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org532a196">
+<h2 id="org532a196">The Three States</h2>
+
+<div class="figure">
+<p><img src="./images/git-working-directory-index-head.png" alt="git-working-directory-index-head.png" />
+</p>
+</div>
+
+<small>Image &copy; https://git-scm.com/book/</small>
+
+<p>
+<code>*</code> Staging area is also known as the "index"
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd8e315a">
+<h2 id="orgd8e315a">Configuration</h2>
+<ul>
+<li>Lots of Configuration options but don't get overwhelmed</li>
+<li>Just need to setup username and email to be able to commit</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git config --global user.name "Shantanu Goel"
+git config --global user.email "shantanu@shantanugoel.com"
+</code></pre>
+</div>
+
+<ul>
+<li>Look into setting up ssh keys for working easily with remote repositories</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org29f970f">
+<h2 id="org29f970f">Basic workflow</h2>
+<ul>
+<li>Make changes</li>
+
+<li>Check if any changes have been made</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git status -s
+</code></pre>
+</div>
+<ul>
+<li>Diff the changes to confirm that they are correct</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git diff
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git diff [filename]
+</code></pre>
+</div>
+
+<ul>
+<li>Stage the changes (add them to the index)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git add [filename]
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Stage all files under current path
+git add .
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># See diff of staged files
+git diff --cache
+</code></pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org864c7d7">
+<h2 id="org864c7d7">Basic workflow continued..</h2>
+<ul>
+<li>Commit the changes (Update the HEAD)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git commit
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Add all tracked files without needing a git add step and
+# specify a short commit message with the command itself
+git commit -am
+</code></pre>
+</div>
+
+<ul>
+<li>Check log</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git log
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git log --oneline --graph
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6174bde">
+<h2 id="org6174bde">Basic workflow continued..</h2>
 <ul>
 <li>Push changes to remote repository</li>
 
@@ -56,6 +230,418 @@ git push origin master
 <li>Explore various other switches/options of these commands</li>
 
 </ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org00f495f">
+<h2 id="org00f495f">Branching and Merging</h2>
+
+<div class="figure">
+<p><img src="./images/branches.png" alt="branches.png" />
+</p>
+</div>
+<small>Image &copy; https://atlassian.com/</small>
+
+</section>
+</section>
+<section>
+<section id="slide-org56226cb">
+<h2 id="org56226cb">Branching and Merging</h2>
+<ul>
+<li>Always work on branches while making any non-trivial changes, so that you can develop in isolation.</li>
+<li>Merge back to master when done</li>
+<li>Any branch could be "master" branch. Names don't matter</li>
+<li>List all branches</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git branch
+</code></pre>
+</div>
+
+<ul>
+<li>Switch to an existing branch</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout [branch-name]
+</code></pre>
+</div>
+
+<ul>
+<li>Create new branch and switch to it</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout -b [branch-name]
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga4d7f85">
+<h2 id="orga4d7f85">Branching and Merging</h2>
+<ul>
+<li>Merging is the act of combining the commits made in different branches into a unified history</li>
+<li>Receiving branch: The branch that will have another branch's changes merged into itself</li>
+<li>You should be on the receiving branch while executing the below command</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git merge [branch-to-merge]
+</code></pre>
+</div>
+
+<ul>
+<li>Deleting a branch (Either changes are merged or not needed anymore otherwise)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git branch -d [branch-name]
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orge423c9c">
+<h2 id="orge423c9c">Rebasing</h2>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/rebase.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<small>Image &copy; https://atlassian.com/</small>
+</section>
+</section>
+<section>
+<section id="slide-org28a6a3b">
+<h2 id="org28a6a3b">Rebasing</h2>
+<ul>
+<li>Similar to merge, but rewrites the history</li>
+<li>Bring in all changes that happened in source branch while you were making changes in your branch.</li>
+<li>Apply your changes on top of this new base</li>
+<li>Often required by projects before accepting your patches if they can't be cleanly merged</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git rebase
+</code></pre>
+</div>
+<ul>
+<li>Interactive rebase provides you opportunity to pick and choose the commits you need</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git rebase -i
+</code></pre>
+</div>
+
+<ul>
+<li>Don't rebase public/permanent branches</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org3642a8b">
+<h2 id="org3642a8b">Conflicts</h2>
+<ul>
+<li>You may come across conflicts during merging or rebasing</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >Unimpacted content
+< source-branch
+Conflicting code from source branch
+========
+Conflicting code from feature branch
+</code></pre>
+</div>
+
+<ul>
+<li>Manually fix the conflicts by editing files</li>
+<li>Use normal process to add/commit the files</li>
+<li>For conflicts seen during a rebase, you also have to do either one of:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" ># Conflicts fixed, continue rebasing
+git rebase --continue
+# Abort rebasing
+git rebase --abort
+# Skip this commit
+git rebase --skip
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org330967a">
+<h2 id="org330967a">Cherry-Picking</h2>
+<ul>
+<li>You may want to pick a specific fix from another branch</li>
+<li>Or maybe you are jointly working on a feature with someone else maintaining their own feature branch</li>
+<li>Cherry-picking will take the specified commit and apply it to the head of your branch</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git cherry-pick [commit-hash-to-pick]
+</code></pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org704abab">
+<h2 id="org704abab">When things go wrong: Undo</h2>
+<ul>
+<li>When you want to remove your changes temporarily to try something else</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Save current staged and unstaged changes into a hidden location
+# and remove them from the working directory
+git stash
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Bring back stashed changes
+git stash pop
+</code></pre>
+</div>
+
+<ul>
+<li>Can also be useful while merging/rebasing without committing</li>
+<li>Can have multiple stashes. Explore through references.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge91e93a">
+<h2 id="orge91e93a">When things go wrong: Undo</h2>
+<ul>
+<li>Temporarily go back to a previous commit in history</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout [commit-hash]
+</code></pre>
+</div>
+
+<ul>
+<li>This will put you in a "Detached head state"</li>
+<li>You can make changes here but can't commit as you are no longer on a branch</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1ea4441">
+<h2 id="org1ea4441">When things go wrong: Undo</h2>
+<ul>
+<li>Discard currently unstaged changes</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="bash" >git checkout -- [file-name-or-path-or.]
+</code></pre>
+</div>
+
+<ul>
+<li>Remove the changes done in a previous commit</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" >git revert [commit-hash]
+</code></pre>
+</div>
+
+<ul>
+<li>Creates a new commit which removes the changes introduced by the commit being reverted</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgedbfd0c">
+<h2 id="orgedbfd0c">When things go wrong: Undo</h2>
+<ul>
+<li>Swiss knife of undoing: git reset</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Reset the head of current branch to given reference
+# Move the index as well to this reference
+# The changes after the above reference show up as unstaged
+# No loss of staged/unstaged changes or other commits
+git reset --soft [ref]
+</code></pre>
+</div>
+<div class="org-src-container">
+
+<pre><code class="bash" ># Reset the head of current branch to given reference
+# The changes after the above reference show up as staged
+# No loss of staged/unstaged changes or other commits
+# --mixed is the default mode of reset if you don't specify any option
+git reset --mixed [ref]
+</code></pre>
+</div>
+<div class="org-src-container">
+
+<pre><code class="bash" ># Reset the head of current branch to given reference
+# All staged/unstaged changes and other commits are removed
+# Potential recovery possible (shown in further slides)
+# But make sure no unstaged changes present before running this
+git reset --hard [ref]
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0365407">
+<h2 id="org0365407">When things go wrong: Undo</h2>
+<ul>
+<li>Git reset visualized</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./images/git-reset-tree.jpg" alt="git-reset-tree.jpg" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org87480af">
+<h2 id="org87480af">When things go wrong: Undo</h2>
+<ul>
+<li>Recovering from &#x2013;soft/&#x2013;mixed reset is easy as there's no data loss from working directory</li>
+
+<li>Recovering from &#x2013;hard is possible as well if the needed changes were committed or staged</li>
+
+<li>Check "git reflog" command to see the commits that you want to bring back</li>
+
+<li>Check "git fsck" command to find staged changes which were not yet committed but lost due to git reset &#x2013;hard</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org68c30fa">
+<h2 id="org68c30fa">Repo</h2>
+<ul>
+<li>Tool developed by Google for large projects working with multiple git repositories</li>
+<li>Git already has submodules and subtrees but the project may want the repositories to be independently worked on</li>
+<li>Pros and cons are debatable, largely subjective</li>
+<li>repo has integration with gerrit, a tool for code reviews and management</li>
+<li>Not necessary to use repo commands for most things and can use git commands instead</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8a8091d">
+<h2 id="org8a8091d">Repo</h2>
+<ul>
+<li>Few main commands that you'll end up using from repo:</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="bash" ># Init repo 
+repo init -u url
+
+# Sync all working directories and rebase branches 
+repo sync
+
+# Download a specific patch from gerrit
+repo download
+
+# Check status of all changes across all projects
+repo status
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orge198044">
+<h2 id="orge198044">Gerrit</h2>
+<ul>
+<li>Provides web based code review and repository management for git</li>
+<li>Upload changes to gerrit, following any given guidelines for the project (including code as well as commit messages)</li>
+<li>Add reviewers and wait for their comments</li>
+<li>Auto checkers may be integrated by project maintainers for verifying changes</li>
+<li>-1/-2 from a checker or reviewer needs you to make changes and upload new patches</li>
+<li>+1 is good, but generally you need a +2 before the changes can be submitted/merged</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org82d53a2">
+<h2 id="org82d53a2">References</h2>
+<ul>
+<li>This guide: <a href="https://git-guide.shantanugoel.com/">https://git-guide.shantanugoel.com/</a>
+<ul>
+<li>Pull requests for changes at: <a href="https://github.com/shantanugoel/git-gerrit-repo-guide/">https://github.com/shantanugoel/git-gerrit-repo-guide/</a></li>
+
+</ul></li>
+<li>Beginner: <a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></li>
+<li>Tips: <a href="https://wildlyinaccurate.com/a-hackers-guide-to-git/">https://wildlyinaccurate.com/a-hackers-guide-to-git/</a></li>
+<li>Intermediate: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+<li>For the brave: <a href="https://git-scm.com/docs/">https://git-scm.com/docs/</a></li>
+<li>Repo commands: <a href="https://source.android.com/setup/develop/repo">https://source.android.com/setup/develop/repo</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgabca51c">
+<h2 id="orgabca51c">git push &#x2013;force!</h2>
 </section>
 </section>
 </div>
