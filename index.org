@@ -106,11 +106,17 @@ git log
 git log --oneline --graph
 #+END_SRC
 
+* Basic workflow continued..
 - Push changes to remote repository
 
 #+BEGIN_SRC bash
 git push [repository] [branch]
 git push origin master 
+#+END_SRC
+
+- Getting new changes from remote repository
+#+BEGIN_SRC bash
+git pull
 #+END_SRC
 
 - Explore various other switches/options of these commands
