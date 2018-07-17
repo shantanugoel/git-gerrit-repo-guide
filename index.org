@@ -78,7 +78,7 @@ git add .
 
 #+BEGIN_SRC bash
 # See diff of staged files
-git diff --cache
+git diff --cached
 #+END_SRC
 
 

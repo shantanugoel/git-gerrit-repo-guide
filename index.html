@@ -31,8 +31,8 @@
 </section>
 
 <section>
-<section id="slide-orgbdcbb3c">
-<h2 id="orgbdcbb3c">The "Repository"</h2>
+<section id="slide-org4c5f041">
+<h2 id="org4c5f041">The "Repository"</h2>
 <p>
 Contains all data and metadata for the git version control system
 </p>
@@ -61,8 +61,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-org532a196">
-<h2 id="org532a196">The Three States</h2>
+<section id="slide-org24cb79d">
+<h2 id="org24cb79d">The Three States</h2>
 
 <div class="figure">
 <p><img src="./images/git-working-directory-index-head.png" alt="git-working-directory-index-head.png" />
@@ -78,8 +78,8 @@ Contains all data and metadata for the git version control system
 </section>
 </section>
 <section>
-<section id="slide-orgd8e315a">
-<h2 id="orgd8e315a">Configuration</h2>
+<section id="slide-org09f5e99">
+<h2 id="org09f5e99">Configuration</h2>
 <ul>
 <li>Lots of Configuration options but don't get overwhelmed</li>
 <li>Just need to setup username and email to be able to commit</li>
@@ -101,8 +101,8 @@ git config --global user.email "shantanu@shantanugoel.com"
 </section>
 </section>
 <section>
-<section id="slide-org29f970f">
-<h2 id="org29f970f">Basic workflow</h2>
+<section id="slide-orgc048572">
+<h2 id="orgc048572">Basic workflow</h2>
 <ul>
 <li>Make changes</li>
 
@@ -153,7 +153,7 @@ git add .
 <div class="org-src-container">
 
 <pre><code class="bash" ># See diff of staged files
-git diff --cache
+git diff --cached
 </code></pre>
 </div>
 
@@ -161,8 +161,8 @@ git diff --cache
 </section>
 </section>
 <section>
-<section id="slide-org864c7d7">
-<h2 id="org864c7d7">Basic workflow continued..</h2>
+<section id="slide-org56e39fa">
+<h2 id="org56e39fa">Basic workflow continued..</h2>
 <ul>
 <li>Commit the changes (Update the HEAD)</li>
 
@@ -202,8 +202,8 @@ git commit -am
 </section>
 </section>
 <section>
-<section id="slide-org6174bde">
-<h2 id="org6174bde">Basic workflow continued..</h2>
+<section id="slide-org66fd7fe">
+<h2 id="org66fd7fe">Basic workflow continued..</h2>
 <ul>
 <li>Push changes to remote repository</li>
 
@@ -234,8 +234,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-org00f495f">
-<h2 id="org00f495f">Branching and Merging</h2>
+<section id="slide-orgf6bf4a7">
+<h2 id="orgf6bf4a7">Branching and Merging</h2>
 
 <div class="figure">
 <p><img src="./images/branches.png" alt="branches.png" />
@@ -246,8 +246,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-org56226cb">
-<h2 id="org56226cb">Branching and Merging</h2>
+<section id="slide-org834dd82">
+<h2 id="org834dd82">Branching and Merging</h2>
 <ul>
 <li>Always work on branches while making any non-trivial changes, so that you can develop in isolation.</li>
 <li>Merge back to master when done</li>
@@ -285,8 +285,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orga4d7f85">
-<h2 id="orga4d7f85">Branching and Merging</h2>
+<section id="slide-orgfbe07c1">
+<h2 id="orgfbe07c1">Branching and Merging</h2>
 <ul>
 <li>Merging is the act of combining the commits made in different branches into a unified history</li>
 <li>Receiving branch: The branch that will have another branch's changes merged into itself</li>
@@ -313,8 +313,8 @@ git push origin master
 </section>
 </section>
 <section>
-<section id="slide-orge423c9c">
-<h2 id="orge423c9c">Rebasing</h2>
+<section id="slide-org4bc51be">
+<h2 id="org4bc51be">Rebasing</h2>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/rebase.svg" class="org-svg">
@@ -325,8 +325,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-org28a6a3b">
-<h2 id="org28a6a3b">Rebasing</h2>
+<section id="slide-org0683b05">
+<h2 id="org0683b05">Rebasing</h2>
 <ul>
 <li>Similar to merge, but rewrites the history</li>
 <li>Bring in all changes that happened in source branch while you were making changes in your branch.</li>
@@ -358,8 +358,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-org3642a8b">
-<h2 id="org3642a8b">Conflicts</h2>
+<section id="slide-org52a9a93">
+<h2 id="org52a9a93">Conflicts</h2>
 <ul>
 <li>You may come across conflicts during merging or rebasing</li>
 
@@ -395,8 +395,8 @@ git rebase --skip
 </section>
 </section>
 <section>
-<section id="slide-org330967a">
-<h2 id="org330967a">Cherry-Picking</h2>
+<section id="slide-orgba91f1c">
+<h2 id="orgba91f1c">Cherry-Picking</h2>
 <ul>
 <li>You may want to pick a specific fix from another branch</li>
 <li>Or maybe you are jointly working on a feature with someone else maintaining their own feature branch</li>
@@ -414,8 +414,8 @@ git rebase --skip
 </section>
 </section>
 <section>
-<section id="slide-org704abab">
-<h2 id="org704abab">When things go wrong: Undo</h2>
+<section id="slide-org4ce6422">
+<h2 id="org4ce6422">When things go wrong: Undo</h2>
 <ul>
 <li>When you want to remove your changes temporarily to try something else</li>
 
@@ -445,8 +445,8 @@ git stash pop
 </section>
 </section>
 <section>
-<section id="slide-orge91e93a">
-<h2 id="orge91e93a">When things go wrong: Undo</h2>
+<section id="slide-org78fa3f1">
+<h2 id="org78fa3f1">When things go wrong: Undo</h2>
 <ul>
 <li>Temporarily go back to a previous commit in history</li>
 
@@ -466,8 +466,8 @@ git stash pop
 </section>
 </section>
 <section>
-<section id="slide-org1ea4441">
-<h2 id="org1ea4441">When things go wrong: Undo</h2>
+<section id="slide-orgbdb39aa">
+<h2 id="orgbdb39aa">When things go wrong: Undo</h2>
 <ul>
 <li>Discard currently unstaged changes</li>
 
@@ -497,8 +497,8 @@ git stash pop
 </section>
 </section>
 <section>
-<section id="slide-orgedbfd0c">
-<h2 id="orgedbfd0c">When things go wrong: Undo</h2>
+<section id="slide-org610b479">
+<h2 id="org610b479">When things go wrong: Undo</h2>
 <ul>
 <li>Swiss knife of undoing: git reset</li>
 
@@ -535,8 +535,8 @@ git reset --hard [ref]
 </section>
 </section>
 <section>
-<section id="slide-org0365407">
-<h2 id="org0365407">When things go wrong: Undo</h2>
+<section id="slide-org85462bc">
+<h2 id="org85462bc">When things go wrong: Undo</h2>
 <ul>
 <li>Git reset visualized</li>
 
@@ -550,8 +550,8 @@ git reset --hard [ref]
 </section>
 </section>
 <section>
-<section id="slide-org87480af">
-<h2 id="org87480af">When things go wrong: Undo</h2>
+<section id="slide-orgf0df3f5">
+<h2 id="orgf0df3f5">When things go wrong: Undo</h2>
 <ul>
 <li>Recovering from &#x2013;soft/&#x2013;mixed reset is easy as there's no data loss from working directory</li>
 
@@ -566,8 +566,8 @@ git reset --hard [ref]
 </section>
 </section>
 <section>
-<section id="slide-org68c30fa">
-<h2 id="org68c30fa">Repo</h2>
+<section id="slide-org0366f81">
+<h2 id="org0366f81">Repo</h2>
 <ul>
 <li>Tool developed by Google for large projects working with multiple git repositories</li>
 <li>Git already has submodules and subtrees but the project may want the repositories to be independently worked on</li>
@@ -580,8 +580,8 @@ git reset --hard [ref]
 </section>
 </section>
 <section>
-<section id="slide-org8a8091d">
-<h2 id="org8a8091d">Repo</h2>
+<section id="slide-orga9cc9c2">
+<h2 id="orga9cc9c2">Repo</h2>
 <ul>
 <li>Few main commands that you'll end up using from repo:</li>
 
@@ -606,8 +606,8 @@ repo status
 </section>
 </section>
 <section>
-<section id="slide-orge198044">
-<h2 id="orge198044">Gerrit</h2>
+<section id="slide-orgf7ebeef">
+<h2 id="orgf7ebeef">Gerrit</h2>
 <ul>
 <li>Provides web based code review and repository management for git</li>
 <li>Upload changes to gerrit, following any given guidelines for the project (including code as well as commit messages)</li>
@@ -621,8 +621,8 @@ repo status
 </section>
 </section>
 <section>
-<section id="slide-org82d53a2">
-<h2 id="org82d53a2">References</h2>
+<section id="slide-org5b8af8e">
+<h2 id="org5b8af8e">References</h2>
 <ul>
 <li>This guide: <a href="https://git-guide.shantanugoel.com/">https://git-guide.shantanugoel.com/</a>
 <ul>
@@ -640,8 +640,8 @@ repo status
 </section>
 </section>
 <section>
-<section id="slide-orgabca51c">
-<h2 id="orgabca51c">git push &#x2013;force!</h2>
+<section id="slide-org0583115">
+<h2 id="org0583115">git push &#x2013;force!</h2>
 </section>
 </section>
 </div>
